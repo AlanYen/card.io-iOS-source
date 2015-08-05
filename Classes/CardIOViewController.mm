@@ -234,15 +234,21 @@
 #pragma mark - View Controller orientation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-  return [self.navigationController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+    // return [self.navigationController shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
+    // 修正跟 New17Life Project 衝突的寫法
+    return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (BOOL)shouldAutorotate {
-  return [self.navigationController shouldAutorotate];
+    // return [self.navigationController shouldAutorotate];
+    // 修正跟 New17Life Project 衝突的寫法
+    return NO;
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
-  return [self.navigationController supportedInterfaceOrientations];
+    // return [self.navigationController supportedInterfaceOrientations];
+    // 修正跟 New17Life Project 衝突的寫法
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark - Button orientation
